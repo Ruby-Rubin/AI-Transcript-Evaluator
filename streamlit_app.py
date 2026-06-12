@@ -5,7 +5,7 @@ import numpy as np
 
 from backend import evaluate_video
 
-DEBUG_MODE = True
+DEBUG_MODE = False
 
 
 def get_score_color(score):
