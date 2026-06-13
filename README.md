@@ -69,6 +69,25 @@ This reduces API usage while maintaining evaluation quality and scalability.
 | Version Control | Git & GitHub |
 
 ---
+## Prerequisites
+
+Before running the project, ensure the following are installed:
+
+- Python 3.10+
+- Java (JRE/JDK 11 or later)
+
+Verify Java installation:
+
+```bash
+java --version
+```
+
+Verify Python installation:
+
+```bash
+python --version
+```
+---
 
 ## 🛠️ Installation
 
