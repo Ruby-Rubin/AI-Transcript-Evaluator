@@ -114,7 +114,7 @@ GEMINI_API_KEY=YOUR_API_KEY
 
 ## 👨‍💻 Author
 
-**Ruby Rubin**
+**Rubin Kanna S**
 
 B.Tech Artificial Intelligence and Data Science
 
