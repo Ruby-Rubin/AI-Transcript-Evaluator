@@ -24,9 +24,9 @@ flowchart TD
 
     C --> D[Grammar Local]
     C --> E[Vocabulary Local]
-    C --> F[Clarity LLM]
-    C --> G[Technical Accuracy LLM]
-    C --> H[Professionalism LLM]
+    C --> F[Clarity Gemini]
+    C --> G[Technical Accuracy Gemini]
+    C --> H[Professionalism Gemini]
 
     D --> I[Final Evaluation Report]
     E --> I
@@ -64,7 +64,7 @@ This reduces API usage while maintaining evaluation quality and scalability.
 | Speech-to-Text | OpenAI Whisper |
 | Grammar Evaluation | LanguageTool |
 | Vocabulary Evaluation | LexicalRichness (MTLD) |
-| AI Evaluation | LLM |
+| AI Evaluation | Google Gemini |
 | Visualization | Matplotlib |
 | Version Control | Git & GitHub |
 
@@ -101,7 +101,7 @@ streamlit run streamlit_app.py
 Create a `.env` file:
 
 ```env
-API_KEY=YOUR_API_KEY
+GEMINI_API_KEY=YOUR_API_KEY
 ```
 
 ---
@@ -112,9 +112,9 @@ API_KEY=YOUR_API_KEY
 |----------|----------|
 | Grammar | Normalized Error Density |
 | Vocabulary | MTLD |
-| Clarity | LLM |
-| Technical Accuracy | LLM |
-| Professionalism | LLM |
+| Clarity | Gemini |
+| Technical Accuracy | Gemini |
+| Professionalism | Gemini |
 
 ---
 
