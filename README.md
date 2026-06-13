@@ -15,17 +15,25 @@ AI Transcript Evaluator is a hybrid AI-powered system that evaluates spoken resp
 
 ## 🏗️ Architecture
 
-Video Upload
-↓
-Whisper
-↓
-Transcript
-↓
-├─ Grammar (Local)
-├─ Vocabulary (Local)
-├─ Clarity (Gemini)
-├─ Technical Accuracy (Gemini)
-└─ Professionalism (Gemini)
+```mermaid
+flowchart TD
+    A[Video Upload] --> B[Whisper Transcription]
+    B --> C[Transcript]
+
+    C --> D[Grammar Local]
+    C --> E[Vocabulary Local]
+    C --> F[Clarity Gemini]
+    C --> G[Technical Accuracy Gemini]
+    C --> H[Professionalism Gemini]
+
+    D --> I[Final Evaluation Report]
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+
+    I --> J[Streamlit Dashboard]
+```
 
 ## ⚙️ Tech Stack
 
