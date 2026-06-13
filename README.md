@@ -74,18 +74,15 @@ This reduces API usage while maintaining evaluation quality and scalability.
 Before running the project, ensure the following are installed:
 
 - Python 3.10+
-- Java (JRE/JDK 11 or later)
+- Java 17+
+- FFmpeg
 
-Verify Java installation:
-
-```bash
-java --version
-```
-
-Verify Python installation:
+Verify installations:
 
 ```bash
 python --version
+java --version
+ffmpeg -version
 ```
 ---
 
