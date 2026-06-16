@@ -64,7 +64,7 @@ This reduces API usage while maintaining evaluation quality and scalability.
 | Speech-to-Text | OpenAI Whisper |
 | Grammar Evaluation | LanguageTool |
 | Vocabulary Evaluation | LexicalRichness (MTLD) |
-| AI Evaluation | Google Lllama 3.3 |
+| AI Evaluation | Lllama 3.3 |
 | Visualization | Matplotlib |
 | Version Control | Git & GitHub |
 
