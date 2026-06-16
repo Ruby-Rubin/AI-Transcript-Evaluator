@@ -1,58 +1,76 @@
 import os
 import json
-import google.generativeai as genai
+from groq import Groq
 from dotenv import load_dotenv
 
 load_dotenv()
 
-genai.configure(
-    api_key=os.getenv("GEMINI_API_KEY")
+client = Groq(
+api_key=os.getenv("GROQ_API_KEY")
 )
-
-model = genai.GenerativeModel("gemini-2.5-flash")
-
 
 def evaluate_transcript(transcript):
 
-    prompt = f"""
-    Evaluate the transcript on ONLY these criteria:
+  prompt = f"""
+  Evaluate the transcript on ONLY these criteria:
 
-    1. Clarity
-    2. Technical Accuracy
-    3. Professionalism
+1. Clarity
+2. Technical Accuracy
+3. Professionalism
 
-    Return ONLY valid JSON.
+Return ONLY valid JSON.
 
-    {{
-      "clarity": {{
-        "score": 0,
-        "reason": ""
-      }},
-      "technical_accuracy": {{
-        "score": 0,
-        "reason": ""
-      }},
-      "professionalism": {{
-        "score": 0,
-        "reason": ""
-      }}
-    }}
+{{
+  "clarity": {{
+    "score": 0,
+    "reason": ""
+  }},
+  "technical_accuracy": {{
+    "score": 0,
+    "reason": ""
+  }},
+  "professionalism": {{
+    "score": 0,
+    "reason": ""
+  }}
+}}
 
-    Rules:
-    - Score from 1 to 10
-    - Reasons must be under 10 words
-    - No markdown
-    - No extra text
+Rules:
+- Imagine you are a English professor grading a student's presentation. Grade the transcript based on the three criteria above.
+- State the reason alone, no need to mention about the transcript itself. For example, if the transcript is not clear, you can say "The speaker's ideas were not well organized and the language used was too complex for the audience to understand."
+- Score from 1 to 10
+- Reasons must be around 1-2 sentences for each category
+- No markdown
+- No extra text
+- Return ONLY valid JSON
+- Do not wrap JSON in markdown
+- Do not add explanations
+- Do not add comments
+- Output must be parseable by json.loads()
 
-    Transcript:
-    {transcript}
-    """
 
-    response = model.generate_content(prompt)
+Transcript:
+{transcript}
+"""
 
-    text = response.text.strip()
+  response = client.chat.completions.create(
+    model="llama-3.3-70b-versatile",
+    messages=[
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ],
+    temperature=0
+)
 
-    text = text.replace("```json", "")
-    text = text.replace("```", "")
+  text = response.choices[0].message.content.strip()
 
-    return json.loads(text) 
+  text = text.replace("```json", "")
+  text = text.replace("```", "")
+
+  
+
+  return json.loads(text)
+
+
