@@ -24,9 +24,9 @@ flowchart TD
 
     C --> D[Grammar Local]
     C --> E[Vocabulary Local]
-    C --> F[Clarity Lllama 3.3]
-    C --> G[Technical Accuracy Lllama 3.3]
-    C --> H[Professionalism Lllama 3.3]
+    C --> F[Clarity Lllama 4]
+    C --> G[Technical Accuracy Lllama 4]
+    C --> H[Professionalism Lllama 4]
 
     D --> I[Final Evaluation Report]
     E --> I
@@ -46,7 +46,7 @@ Objective metrics are evaluated locally:
 - Grammar
 - Vocabulary
 
-Subjective metrics are evaluated using Lllama 3.3:
+Subjective metrics are evaluated using Lllama 4:
 
 - Clarity
 - Technical Accuracy
@@ -64,7 +64,7 @@ This reduces API usage while maintaining evaluation quality and scalability.
 | Speech-to-Text | OpenAI Whisper |
 | Grammar Evaluation | LanguageTool |
 | Vocabulary Evaluation | LexicalRichness (MTLD) |
-| AI Evaluation | Lllama 3.3 |
+| AI Evaluation | Lllama 4 |
 | Visualization | Matplotlib |
 | Version Control | Git & GitHub |
 
@@ -112,9 +112,9 @@ GROQ_API_KEY=YOUR_API_KEY
 |----------|----------|
 | Grammar | Normalized Error Density |
 | Vocabulary | MTLD |
-| Clarity | Lllama 3.3 |
-| Technical Accuracy | Lllama 3.3 |
-| Professionalism | Lllama 3.3 |
+| Clarity | Lllama 4 |
+| Technical Accuracy | Lllama 4 |
+| Professionalism | Lllama 4 |
 
 ---
 
